@@ -155,6 +155,7 @@ namespace GearStatDNA
         public string GetJsonString(string url)
         {
             HttpWebRequest req = WebRequest.Create(url) as HttpWebRequest;
+            HttpWebResponse res = req.GetResponse() as HttpWebResponse;
 
             if (!string.IsNullOrEmpty(privateAuthKey) && !string.IsNullOrEmpty(publicAuthKey))
             {
@@ -175,7 +176,6 @@ namespace GearStatDNA
                 req.Headers[HttpRequestHeader.Authorization]
                     = "BNET " + publicAuthKey + ":" + signature;
             }
-            HttpWebResponse res = req.GetResponse() as HttpWebResponse;
 
             using (StreamReader streamReader = new StreamReader(res.GetResponseStream(), Encoding.UTF8))
             {

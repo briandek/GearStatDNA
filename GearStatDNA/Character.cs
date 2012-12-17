@@ -18,7 +18,6 @@ namespace GearStatDNA
         public int achievementPoints { get; set; }
         public string thumbnail { get; set; }
         public char calcClass { get; set; }
-
         public Guild guild { get; set; }
         public Items items { get; set; }
         public Stats stats { get; set; }
@@ -65,7 +64,43 @@ namespace GearStatDNA
                     public int reforge { get; set; }
                 }
             }
+
+            private Dictionary<string, Item> BasicGear;
+
+            public Dictionary<string, Item> GetBasicDetails()
+            {
+                if (BasicGear == null)
+                {
+                    BasicGear = new Dictionary<string, Item>();
+                }
+                else
+                {
+                    //Careful - force caching?
+                    return BasicGear;
+                }
+
+                if (head != null) BasicGear.Add("head", head);
+                if (neck != null) BasicGear.Add("neck", neck);
+                if (shoulder != null) BasicGear.Add("shoulder", shoulder);
+                if (back != null) BasicGear.Add("back", back);
+                if (chest != null) BasicGear.Add("chest", chest);
+                if (shirt != null) BasicGear.Add("shirt", shirt);
+                if (wrist != null) BasicGear.Add("wrist", wrist);
+                if (hands != null) BasicGear.Add("hands", hands);
+                if (waist != null) BasicGear.Add("waist", waist);
+                if (legs != null) BasicGear.Add("legs", legs);
+                if (feet != null) BasicGear.Add("feet", feet);
+                if (finger1 != null) BasicGear.Add("finger1", finger1);
+                if (finger2 != null) BasicGear.Add("finger2", finger2);
+                if (trinket1 != null) BasicGear.Add("trinket1", trinket1);
+                if (trinket2 != null) BasicGear.Add("trinket2", trinket2);
+                if (mainHand != null) BasicGear.Add("mainHand", mainHand);
+                if (offHand != null) BasicGear.Add("offHand", offHand);
+
+                return BasicGear;
+            }
         }
+
         public class Guild
         {
             public string Name { get; set; }
@@ -74,7 +109,6 @@ namespace GearStatDNA
             public int Level { get; set; }
             public int Members { get; set; }
             public int AchievementPoints { get; set; }
-
             public Emblem emblem { get; set; }
 
             public class Emblem
@@ -99,7 +133,6 @@ namespace GearStatDNA
                 public string icon { get; set; }
                 public int rank { get; set; }
                 public int max { get; set; }
-
                 public IEnumerable<int> recipes { get; set; }
             }
         }
@@ -108,13 +141,11 @@ namespace GearStatDNA
             public double health { get; set; }
             public string powerType { get; set; }
             public double power { get; set; }
-
             public double str { get; set; }
             public double agi { get; set; }
             public double sta { get; set; }
             public double @int { get; set; }
             public double spr { get; set; }
-
             public double attackPower { get; set; }
             public double rangedAttackPower { get; set; }
             public double mastery { get; set; }
@@ -163,6 +194,8 @@ namespace GearStatDNA
             public double pvpPower { get; set; }
             public double pvpPowerRating { get; set; }
         }
+
+
     }
 }
 

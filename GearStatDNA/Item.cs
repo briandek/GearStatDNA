@@ -10,14 +10,11 @@ namespace GearStatDNA
         public int id { get; set; }
         public int disenchantingSkillRank { get; set; }
         public string description { get; set; }
-
         public string name { get; set; }
         public string icon { get; set; }
         public int stackable { get; set; }
-
         public IEnumerable<BonusStat> bonusStats { get; set; }
         public IEnumerable<ItemSpell> itemSpells { get; set; }
-
         public int buyPrice { get; set; }
         public int itemClass { get; set; }
         public int itemSubClass { get; set; }
@@ -34,14 +31,12 @@ namespace GearStatDNA
         public int requiredSkill { get; set; }
         public int requiredLevel { get; set; }
         public int requiredSkillRank { get; set; }
-
         public ItemSource itemSource { get; set; }
         public int baseArmor { get; set; }
         public bool hasSockets { get; set; }
         public bool isAuctionable { get; set; }
         public double armor { get; set; }
         public int displayInfoId { get; set; }
-
         public string nameDescription { get; set; }
         public string nameDescriptionColor { get; set; }
 
@@ -50,7 +45,6 @@ namespace GearStatDNA
             public int sourceId { get; set; }
             public string sourceType { get; set; }
         }
-
 
         public class BonusStat
         {
@@ -76,7 +70,6 @@ namespace GearStatDNA
                 public string description { get; set; }
                 public string castTime { get; set; }
             }
-
         }
     }
 }
