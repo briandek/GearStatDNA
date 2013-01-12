@@ -17,7 +17,6 @@ namespace GearStatDNA
         public IEnumerable<ItemSpell> itemSpells { get; set; }
         public int buyPrice { get; set; }
         public int itemClass { get; set; }
-        public int itemSubClass { get; set; }
         public int containerSlots { get; set; }
         public int inventoryType { get; set; }
         public bool equippable { get; set; }

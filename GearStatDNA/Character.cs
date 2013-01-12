@@ -54,7 +54,7 @@ namespace GearStatDNA
                 public string icon { get; set; }
                 public int quality { get; set; }
                 public ToolTipParams tooltipParams { get; set; }
-
+                public IEnumerable<Stat> Stats { get; set; }
                 public class ToolTipParams
                 {
                     public int gem0 { get; set; }
@@ -62,6 +62,12 @@ namespace GearStatDNA
                     public int enchant { get; set; }
                     public IEnumerable<int> set { get; set; }
                     public int reforge { get; set; }
+                }
+
+                public class Stat
+                {
+                    public int stat { get; set; }
+                    public double amount { get; set; }
                 }
             }
 
